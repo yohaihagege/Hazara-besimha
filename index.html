@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazara Besimha - Quiz de Mémorisation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>    חזרה בשמחה </h1>
+            <h2>Hazara Besimha - Quiz de Mémorisation</h2>
+        </header>
+
+        <!-- Écran de sélection du Seder -->
+        <div id="seder-screen" class="screen active">
+            <div class="selection-content">
+                <h3>Choisissez un ordre (סדר)</h3>
+                <div id="sedarim-list" class="selection-list">
+                    <!-- Les boutons seront générés dynamiquement par JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Écran de sélection du traité -->
+        <div id="massekhet-screen" class="screen">
+            <div class="selection-content">
+                <h3>Choisissez un traité (מסכת)</h3>
+                <button id="back-to-seder" class="btn btn-secondary">← Retour aux ordres</button>
+                <div id="massekhot-list" class="selection-list">
+                    <p style="text-align: center; color: #999;">Chargement des traités...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Écran de sélection du chapitre -->
+        <div id="perek-screen" class="screen">
+            <div class="selection-content">
+                <h3 id="perek-title">Choisissez un chapitre (פרק)</h3>
+                <button id="back-to-massekhet" class="btn btn-secondary">← Retour aux traités</button>
+                <div id="perakim-list" class="selection-list"></div>
+            </div>
+        </div>
+
+        <!-- Écran de sélection du daf -->
+        <div id="daf-screen" class="screen">
+            <div class="selection-content">
+                <h3 id="daf-title">Choisissez un daf (דף)</h3>
+                <button id="back-to-perek" class="btn btn-secondary">← Retour aux chapitres</button>
+                <div id="dapim-list" class="selection-list"></div>
+            </div>
+        </div>
+
+        <!-- Écran du quiz -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="quiz-breadcrumb">
+                    <span id="current-seder-name"></span> > 
+                    <span id="current-massekhet-name"></span> > 
+                    <span id="current-perek-name"></span> > 
+                    <span id="current-daf-name"></span>
+                </div>
+                <button id="back-to-daf" class="btn btn-small">← Retour</button>
+                <div class="progress-bar">
+                    <div id="progress" class="progress-fill"></div>
+                </div>
+                <div class="quiz-info">
+                    <span id="question-number">Question 1</span>
+                    <span id="score">Score: 0</span>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div id="question-text" class="question-text"></div>
+                <div id="question-type" class="question-type"></div>
+            </div>
+
+            <div id="answers-container" class="answers-container"></div>
+
+            <div id="feedback" class="feedback"></div>
+
+            <div class="quiz-actions">
+                <button id="submit-btn" class="btn btn-primary" disabled>Valider</button>
+                <button id="next-btn" class="btn btn-secondary" style="display: none;">Question Suivante</button>
+                <button id="finish-btn" class="btn btn-secondary" style="display: none;">Terminer le Quiz</button>
+            </div>
+        </div>
+
+        <!-- Écran de résultats -->
+        <div id="results-screen" class="screen">
+            <div class="results-content">
+                <h2>Résultats du Quiz</h2>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="final-score">0</span>
+                        <span class="score-label">%</span>
+                    </div>
+                    <p id="score-message"></p>
+                </div>
+                <div class="results-details">
+                    <p>Bonnes réponses: <span id="correct-count">0</span></p>
+                    <p>Mauvaises réponses: <span id="incorrect-count">0</span></p>
+                    <p>Total: <span id="total-questions">0</span> questions</p>
+                </div>
+                <div class="results-actions">
+                    <button id="retry-daf-btn" class="btn btn-primary">Réviser ce daf à nouveau</button>
+                    <button id="new-selection-btn" class="btn btn-secondary">Choisir un autre daf</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
