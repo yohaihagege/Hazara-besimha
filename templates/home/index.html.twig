@@ -1,0 +1,131 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hazara Besimha - Quiz de Mémorisation{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>חזרה בשמחה</h1>
+                <h2 data-i18n="title">Hazara Besimha - Quiz de Mémorisation</h2>
+            </div>
+            <div class="header-controls">
+                <div class="language-selector">
+                    <label for="language-select" data-i18n="language">Langue:</label>
+                    <select id="language-select" class="btn btn-small">
+                        <option value="fr" data-i18n="french">Français</option>
+                        <option value="en" data-i18n="english">English</option>
+                        <option value="he" data-i18n="hebrew">עברית</option>
+                    </select>
+                </div>
+                
+                <div id="auth-buttons" style="display: flex; gap: 10px;">
+                    {% if app.user %}
+                        <span id="user-email" style="align-self: center;">{{ app.user.userIdentifier }}</span>
+                        <a href="{{ path('app_logout') }}" id="logout-btn" class="btn btn-small" data-i18n="logout">Déconnexion</a>
+                    {% else %}
+                        <a href="{{ path('app_login') }}" id="login-modal-btn" class="btn btn-small" data-i18n="login">Connexion</a>
+                        <a href="{{ path('app_register') }}" id="register-modal-btn" class="btn btn-small" data-i18n="register">Inscription</a>
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+
+        <!-- Écran de sélection du Seder -->
+        <div id="seder-screen" class="screen active">
+            <div class="selection-content">
+                <h3 data-i18n="chooseSeder">Choisissez un ordre (סדר)</h3>
+                <div id="sedarim-list" class="selection-list">
+                    <!-- Les boutons seront générés dynamiquement par JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Écran de sélection du traité -->
+        <div id="massekhet-screen" class="screen">
+            <div class="selection-content">
+                <h3 data-i18n="chooseMassekhet">Choisissez un traité (מסכת)</h3>
+                <button id="back-to-seder" class="btn btn-secondary" data-i18n="backToSeder">← Retour aux ordres</button>
+                <div id="massekhot-list" class="selection-list">
+                    <p style="text-align: center; color: #999;" data-i18n="loading">Chargement des traités...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Écran de sélection du chapitre -->
+        <div id="perek-screen" class="screen">
+            <div class="selection-content">
+                <h3 id="perek-title" data-i18n="choosePerek">Choisissez un chapitre (פרק)</h3>
+                <button id="back-to-massekhet" class="btn btn-secondary" data-i18n="backToMassekhet">← Retour aux traités</button>
+                <div id="perakim-list" class="selection-list"></div>
+            </div>
+        </div>
+
+        <!-- Écran de sélection du daf -->
+        <div id="daf-screen" class="screen">
+            <div class="selection-content">
+                <h3 id="daf-title" data-i18n="chooseDaf">Choisissez un daf (דף)</h3>
+                <button id="back-to-perek" class="btn btn-secondary" data-i18n="backToPerek">← Retour aux chapitres</button>
+                <div id="dapim-list" class="selection-list"></div>
+            </div>
+        </div>
+
+        <!-- Écran du quiz -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="quiz-breadcrumb">
+                    <span id="current-seder-name"></span> > 
+                    <span id="current-massekhet-name"></span> > 
+                    <span id="current-perek-name"></span> > 
+                    <span id="current-daf-name"></span>
+                </div>
+                <button id="back-to-daf" class="btn btn-small" data-i18n="backToDaf">← Retour</button>
+                <div class="progress-bar">
+                    <div id="progress" class="progress-fill"></div>
+                </div>
+                <div class="quiz-info">
+                    <span id="question-number">Question 1</span>
+                    <span id="score">Score: 0</span>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div id="question-text" class="question-text"></div>
+                <div id="question-type" class="question-type"></div>
+            </div>
+
+            <div id="answers-container" class="answers-container"></div>
+
+            <div id="feedback" class="feedback"></div>
+
+            <div class="quiz-actions">
+                <button id="submit-btn" class="btn btn-primary" disabled data-i18n="submit">Valider</button>
+                <button id="next-btn" class="btn btn-secondary" style="display: none;" data-i18n="nextQuestion">Question Suivante</button>
+                <button id="finish-btn" class="btn btn-secondary" style="display: none;" data-i18n="finishQuiz">Terminer le Quiz</button>
+            </div>
+        </div>
+
+        <!-- Écran de résultats -->
+        <div id="results-screen" class="screen">
+            <div class="results-content">
+                <h2 data-i18n="resultsTitle">Résultats du Quiz</h2>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="final-score">0</span>
+                        <span class="score-label">%</span>
+                    </div>
+                    <p id="score-message"></p>
+                </div>
+                <div class="results-details">
+                    <p><span data-i18n="correctAnswers">Bonnes réponses:</span> <span id="correct-count">0</span></p>
+                    <p><span data-i18n="incorrectAnswers">Mauvaises réponses:</span> <span id="incorrect-count">0</span></p>
+                    <p><span data-i18n="totalQuestions">Total:</span> <span id="total-questions">0</span> <span data-i18n="questions">questions</span></p>
+                </div>
+                <div class="results-actions">
+                    <button id="retry-daf-btn" class="btn btn-primary" data-i18n="retryDaf">Réviser ce daf à nouveau</button>
+                    <button id="new-selection-btn" class="btn btn-secondary" data-i18n="newSelection">Choisir un autre daf</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
