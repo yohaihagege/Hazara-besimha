@@ -153,6 +153,7 @@ const existingDataWithQuestions = {
                                 type: "multiple-choice",
                                 question: "מהו הנושא העיקרי של דף ב במסכת ברכות?",
                                 questionFr: "Quel est le sujet principal du daf bet dans Berakhot ?",
+                                questionEn: "What is the main topic of daf bet in Berakhot?",
                                 options: [
                                     "זמן קריאת שמע בערבית",
                                     "ברכות השחר",
@@ -167,6 +168,7 @@ const existingDataWithQuestions = {
                                 type: "multiple-choice",
                                 question: "מהו הזמן המדויק לקריאת שמע בערב?",
                                 questionFr: "Quel est le moment précis pour lire le Shema le soir ?",
+                                questionEn: "What is the precise time to recite the Shema in the evening?",
                                 options: [
                                     "משעה שהכהנים נכנסים לאכול בתרומתן",
                                     "משעה שהשמש שוקעת",
@@ -181,6 +183,7 @@ const existingDataWithQuestions = {
                                 type: "text",
                                 question: "מהי המילה הראשונה במשנה הראשונה של דף ב?",
                                 questionFr: "Quel est le premier mot de la première mishna du daf bet ?",
+                                questionEn: "What is the first word of the first mishna on daf bet?",
                                 correctAnswer: "מאימתי",
                                 explanation: "המילה הראשונה היא 'מאימתי' - מאימתי קורין את שמע בערבין"
                             }
@@ -193,6 +196,7 @@ const existingDataWithQuestions = {
                                 type: "multiple-choice",
                                 question: "עד מתי ניתן לקרוא את שמע בערב?",
                                 questionFr: "Jusqu'à quand peut-on lire le Shema le soir ?",
+                                questionEn: "Until when can one recite the Shema in the evening?",
                                 options: [
                                     "עד חצות",
                                     "עד עלות השחר",
@@ -207,6 +211,7 @@ const existingDataWithQuestions = {
                                 type: "multiple-choice",
                                 question: "מה דין מי שקרא את שמע אחרי חצות?",
                                 questionFr: "Quelle est la règle pour celui qui lit le Shema après minuit ?",
+                                questionEn: "What is the law for someone who recites the Shema after midnight?",
                                 options: [
                                     "יצא ידי חובה",
                                     "לא יצא ידי חובה",
@@ -221,6 +226,7 @@ const existingDataWithQuestions = {
                                 type: "text",
                                 question: "מהו הזמן האחרון לקריאת שמע בערב?",
                                 questionFr: "Quel est le dernier moment pour lire le Shema le soir ?",
+                                questionEn: "What is the last time to recite the Shema in the evening?",
                                 correctAnswer: "עלות השחר",
                                 explanation: "הזמן האחרון הוא עלות השחר"
                             }
@@ -238,6 +244,7 @@ const existingDataWithQuestions = {
                                 type: "multiple-choice",
                                 question: "מהו הנושא של דף יא בפרק ב?",
                                 questionFr: "Quel est le sujet du daf yud aleph dans le chapitre 2 ?",
+                                questionEn: "What is the topic of daf yud aleph in chapter 2?",
                                 options: [
                                     "ברכות השחר",
                                     "קריאת שמע",
@@ -252,6 +259,7 @@ const existingDataWithQuestions = {
                                 type: "multiple-choice",
                                 question: "כמה ברכות יש בברכות השחר?",
                                 questionFr: "Combien de bénédictions y a-t-il dans les bénédictions du matin ?",
+                                questionEn: "How many blessings are there in the morning blessings (Birkot HaShachar)?",
                                 options: [
                                     "חמש עשרה",
                                     "שמונה עשרה",
@@ -266,6 +274,7 @@ const existingDataWithQuestions = {
                                 type: "text",
                                 question: "מהי הברכה הראשונה בברכות השחר?",
                                 questionFr: "Quelle est la première bénédiction des bénédictions du matin ?",
+                                questionEn: "What is the first blessing of the morning blessings (Birkot HaShachar)?",
                                 correctAnswer: "ברכת אשר נתן לשכוי בינה",
                                 explanation: "הברכה הראשונה היא ברכת אשר נתן לשכוי בינה"
                             }
@@ -288,6 +297,7 @@ const existingDataWithQuestions = {
                                 type: "multiple-choice",
                                 question: "מהו הנושא של דף ב במסכת שבת?",
                                 questionFr: "Quel est le sujet du daf bet dans Shabbat ?",
+                                questionEn: "What is the topic of daf bet in Shabbat?",
                                 options: [
                                     "יציאות השבת",
                                     "מלאכות שבת",
@@ -302,6 +312,7 @@ const existingDataWithQuestions = {
                                 type: "multiple-choice",
                                 question: "כמה יציאות יש בשבת?",
                                 questionFr: "Combien d'expéditions y a-t-il le Shabbat ?",
+                                questionEn: "How many 'exits' (transfers) are there on Shabbat?",
                                 options: [
                                     "שתיים",
                                     "ארבע",
@@ -316,6 +327,7 @@ const existingDataWithQuestions = {
                                 type: "text",
                                 question: "מהי המילה הראשונה במסכת שבת?",
                                 questionFr: "Quel est le premier mot du traité Shabbat ?",
+                                questionEn: "What is the first word of the tractate Shabbat?",
                                 correctAnswer: "יציאות",
                                 explanation: "המילה הראשונה היא 'יציאות' - יציאות השבת"
                             }
@@ -328,6 +340,7 @@ const existingDataWithQuestions = {
                                 type: "multiple-choice",
                                 question: "מה דין המוציא מרשות לרשות בשבת?",
                                 questionFr: "Quelle est la règle pour celui qui transporte d'un domaine à l'autre le Shabbat ?",
+                                questionEn: "What is the law for someone who transfers from one domain to another on Shabbat?",
                                 options: [
                                     "חייב",
                                     "פטור",
@@ -342,6 +355,7 @@ const existingDataWithQuestions = {
                                 type: "multiple-choice",
                                 question: "מהי שיעור ההוצאה האסורה בשבת?",
                                 questionFr: "Quelle est la mesure de transport interdite le Shabbat ?",
+                                questionEn: "What is the measure of carrying that is forbidden on Shabbat?",
                                 options: [
                                     "כגרוגרת",
                                     "כזית",
@@ -356,6 +370,7 @@ const existingDataWithQuestions = {
                                 type: "text",
                                 question: "מהו שיעור ההוצאה בשבת?",
                                 questionFr: "Quelle est la mesure du transport le Shabbat ?",
+                                questionEn: "What is the measure of carrying on Shabbat?",
                                 correctAnswer: "כגרוגרת",
                                 explanation: "שיעור ההוצאה הוא כגרוגרת"
                             }
@@ -378,6 +393,7 @@ const existingDataWithQuestions = {
                                 type: "multiple-choice",
                                 question: "מהו הנושא של דף ב במסכת פסחים?",
                                 questionFr: "Quel est le sujet du daf bet dans Pesachim ?",
+                                questionEn: "What is the topic of daf bet in Pesachim?",
                                 options: [
                                     "איסור חמץ",
                                     "קרבן פסח",
@@ -392,6 +408,7 @@ const existingDataWithQuestions = {
                                 type: "multiple-choice",
                                 question: "מתי מתחיל איסור חמץ?",
                                 questionFr: "Quand commence l'interdiction du hametz ?",
+                                questionEn: "When does the prohibition of chametz begin?",
                                 options: [
                                     "בליל י\"ד",
                                     "בבוקר י\"ד",
@@ -406,6 +423,7 @@ const existingDataWithQuestions = {
                                 type: "text",
                                 question: "מהו הזמן שבו מתחיל איסור חמץ?",
                                 questionFr: "Quel est le moment où commence l'interdiction du hametz ?",
+                                questionEn: "At what time does the prohibition of chametz begin?",
                                 correctAnswer: "בוקר י\"ד",
                                 explanation: "איסור חמץ מתחיל בבוקר י\"ד בניסן"
                             }
@@ -447,6 +465,66 @@ function mergeTalmudData() {
 // Structure de données finale (toutes les massekhot avec leurs perakim, et les dapim/questions existants)
 const talmudData = mergeTalmudData();
 
+/**
+ * Structure dérivée pour la progression :
+ * - talmudDafCounts: nombre total de dapim par massekhet et au global
+ *   { byMassekhet: { "ברכות": 12, "שבת": 30, ... }, total: 123 }
+ *
+ * On ne persiste pas ces données, elles peuvent être recalculées en mémoire
+ * à partir de `talmudData` et ne dépendent pas de l'utilisateur.
+ */
+function computeTalmudDafCounts() {
+    const byMassekhet = {};
+    let total = 0;
+
+    Object.keys(talmudData).forEach(mKey => {
+        const massekhet = talmudData[mKey];
+        let countForMassekhet = 0;
+
+        if (massekhet.perakim) {
+            Object.keys(massekhet.perakim).forEach(pKey => {
+                const perek = massekhet.perakim[pKey];
+                if (perek.dapim) {
+                    const dapimCount = Object.keys(perek.dapim).length;
+                    countForMassekhet += dapimCount;
+                }
+            });
+        }
+
+        byMassekhet[mKey] = countForMassekhet;
+        total += countForMassekhet;
+    });
+
+    return { byMassekhet, total };
+}
+
+// Comptages de base, communs à tous les utilisateurs
+const talmudDafCounts = computeTalmudDafCounts();
+
+/**
+ * Nombre total de dapim par (massekhet, perek).
+ * Clé: `${massekhetKey}__${perekKey}` → nombre de dapim.
+ * Utile pour calculer la progression au niveau du perek.
+ */
+function computePerekDafCounts() {
+    const byPerek = {};
+
+    Object.keys(talmudData).forEach(mKey => {
+        const massekhet = talmudData[mKey];
+        if (!massekhet.perakim) return;
+
+        Object.keys(massekhet.perakim).forEach(pKey => {
+            const perek = massekhet.perakim[pKey];
+            const dapimCount = perek.dapim ? Object.keys(perek.dapim).length : 0;
+            byPerek[`${mKey}__${pKey}`] = dapimCount;
+        });
+    });
+
+    return byPerek;
+}
+
+const talmudPerekDafCounts = computePerekDafCounts();
+
 // État de l'application
 let currentMassekhet = null;
 let currentPerek = null;
@@ -458,56 +536,274 @@ let selectedAnswer = null;
 
 // Initialisation
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded');
+    console.log('🚀 DOM loaded - Initialisation de l\'application');
     
-    // Afficher les Sedarim au chargement
-    displaySedarim();
-    
-    // Événements de navigation
-    document.getElementById('back-to-seder').addEventListener('click', () => {
-        showScreen('seder-screen');
-    });
-    
-    document.getElementById('back-to-massekhet').addEventListener('click', () => {
-        showScreen('massekhet-screen');
-    });
-    
-    document.getElementById('back-to-perek').addEventListener('click', () => {
-        showScreen('perek-screen');
-    });
-    
-    document.getElementById('back-to-daf').addEventListener('click', () => {
-        showScreen('daf-screen');
-    });
-    
-    // Événements du quiz
-    document.getElementById('submit-btn').addEventListener('click', submitAnswer);
-    document.getElementById('next-btn').addEventListener('click', nextQuestion);
-    document.getElementById('finish-btn').addEventListener('click', finishQuiz);
-    
-    // Événements des résultats
-    document.getElementById('retry-daf-btn').addEventListener('click', retryDaf);
-    document.getElementById('new-selection-btn').addEventListener('click', () => {
-        showScreen('seder-screen');
-    });
+    // Attendre que Firebase soit chargé
+    setTimeout(() => {
+        if (typeof firebase === 'undefined') {
+            console.error('❌ Firebase n\'est pas chargé');
+            return;
+        }
+        
+        console.log('✅ Firebase loaded:', firebase);
+        console.log('🔥 Auth disponible:', typeof firebase.auth !== 'undefined');
+        console.log('🗄️ Firestore disponible:', typeof firebase.firestore !== 'undefined');
+        
+        // Afficher les Sedarim au chargement
+        console.log('📚 Affichage des Sedarim...');
+        displaySedarim();
+        
+        // Gestion de la fenêtre modale
+        const modal = document.getElementById('auth-modal');
+        const closeModal = document.querySelector('.close-modal');
+        const loginBtn = document.getElementById('login-modal-btn');
+        const registerBtn = document.getElementById('register-modal-btn');
+        
+        console.log('🔍 Recherche des éléments DOM:');
+        console.log('  - Modal element:', modal);
+        console.log('  - Close modal element:', closeModal);
+        console.log('  - Login button:', loginBtn);
+        console.log('  - Register button:', registerBtn);
+        
+        if (loginBtn) {
+            // Ouvrir la modale de connexion
+            loginBtn.addEventListener('click', () => {
+                console.log('🔑 Bouton Connexion cliqué');
+                modal.style.display = 'block';
+                showAuthForm('login');
+                console.log('📋 Modale de connexion ouverte');
+            });
+        } else {
+            console.error('❌ Bouton de connexion non trouvé');
+        }
+        
+        if (registerBtn) {
+            // Ouvrir la modale d'inscription
+            registerBtn.addEventListener('click', () => {
+                console.log('📝 Bouton Inscription cliqué');
+                modal.style.display = 'block';
+                showAuthForm('register');
+                console.log('📋 Modale d\'inscription ouverte');
+            });
+        } else {
+            console.error('❌ Bouton d\'inscription non trouvé');
+        }
+        
+        if (closeModal) {
+            // Fermer la modale
+            closeModal.addEventListener('click', () => {
+                console.log('❌ Fermeture de la modale via le bouton X');
+                modal.style.display = 'none';
+            });
+        }
+        
+        // Fermer la modale en cliquant à l'extérieur
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                console.log('❌ Fermeture de la modale via clic extérieur');
+                modal.style.display = 'none';
+            }
+        });
+        
+        // Événements de navigation
+        console.log('🧭 Configuration des événements de navigation');
+        document.getElementById('back-to-seder').addEventListener('click', () => {
+            console.log('⬅️ Retour aux Sedarim');
+            showScreen('seder-screen');
+        });
+        
+        document.getElementById('back-to-massekhet').addEventListener('click', () => {
+            console.log('⬅️ Retour aux Massékhot');
+            showScreen('massekhet-screen');
+        });
+        
+        document.getElementById('back-to-perek').addEventListener('click', () => {
+            console.log('⬅️ Retour aux Pérakim');
+            showScreen('perek-screen');
+        });
+        
+        document.getElementById('back-to-daf').addEventListener('click', () => {
+            console.log('⬅️ Retour aux Dapim');
+            showScreen('daf-screen');
+        });
+
+        const dashboardBackBtn = document.getElementById('dashboard-back-to-seder');
+        if (dashboardBackBtn) {
+            dashboardBackBtn.addEventListener('click', () => {
+                console.log('⬅️ Retour à l\'écran d\'étude depuis le dashboard');
+                showScreen('seder-screen');
+            });
+        }
+        
+        // Événements du quiz
+        console.log('🎯 Configuration des événements du quiz');
+        document.getElementById('submit-btn').addEventListener('click', () => {
+            console.log('✅ Soumission de la réponse');
+            submitAnswer();
+        });
+        document.getElementById('next-btn').addEventListener('click', () => {
+            console.log('➡️ Question suivante');
+            nextQuestion();
+        });
+        document.getElementById('finish-btn').addEventListener('click', () => {
+            console.log('🏁 Fin du quiz');
+            finishQuiz();
+        });
+        
+        // Événements des résultats
+        console.log('📊 Configuration des événements des résultats');
+        document.getElementById('retry-daf-btn').addEventListener('click', () => {
+            console.log('🔄 Réessayer ce daf');
+            retryDaf();
+        });
+        document.getElementById('new-selection-btn').addEventListener('click', () => {
+            console.log('🆕 Nouvelle sélection');
+            showScreen('seder-screen');
+        });
+        
+        // Gestionnaire du sélecteur de langue
+        const languageSelect = document.getElementById('language-select');
+        if (languageSelect) {
+            languageSelect.addEventListener('change', (e) => {
+                changeLanguage(e.target.value);
+            });
+        }
+        
+        // Événements d'authentification
+        console.log('🔐 Configuration des événements d\'authentification');
+        document.getElementById('register-btn').addEventListener('click', async () => {
+            console.log('📝 Début du processus d\'inscription');
+            
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const username = document.getElementById('register-username').value;
+
+            console.log('📋 Données du formulaire:');
+            console.log('  - Email:', email);
+            console.log('  - Username:', username);
+            console.log('  - Password length:', password.length);
+            console.log('  - Confirm password length:', confirmPassword.length);
+
+            if (password !== confirmPassword) {
+                console.error('❌ Les mots de passe ne correspondent pas');
+                alert(t('passwordsNotMatch'));
+                return;
+            }
+
+            try {
+                console.log('🔥 Création de l\'utilisateur Firebase...');
+                const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
+                console.log('✅ Utilisateur créé avec succès:', userCredential.user.uid);
+                
+                console.log('👤 Mise à jour du profil utilisateur...');
+                await firebase.auth().updateProfile(userCredential.user, {
+                    displayName: username
+                });
+                console.log('✅ Profil mis à jour');
+
+                // Créer un document utilisateur dans Firestore
+                console.log('🗄️ Création du document utilisateur dans Firestore...');
+                await firebase.firestore().doc(`users/${userCredential.user.uid}`).set({
+                    username: username,
+                    email: email,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    stats: {
+                        totalQuizzes: 0,
+                        correctAnswers: 0,
+                        totalAnswers: 0
+                    }
+                });
+                console.log('✅ Document utilisateur créé dans Firestore');
+
+                alert(t('registrationSuccess'));
+                modal.style.display = 'none';
+                showAuthForm('login');
+                console.log('🎉 Inscription complétée avec succès');
+            } catch (error) {
+                console.error('❌ Erreur lors de l\'inscription:', error.code, error.message);
+                alert(t('error') + ' ' + error.message);
+            }
+        });
+
+        document.getElementById('login-btn').addEventListener('click', async () => {
+            console.log('🔑 Début du processus de connexion');
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            console.log('📋 Données de connexion:');
+            console.log('  - Email:', email);
+            console.log('  - Password length:', password.length);
+
+            try {
+                console.log('🔥 Tentative de connexion...');
+                await firebase.auth().signInWithEmailAndPassword(email, password);
+                console.log('✅ Connexion réussie');
+                modal.style.display = 'none';
+            } catch (error) {
+                console.error('❌ Erreur lors de la connexion:', error.code, error.message);
+                alert(t('error') + ' ' + error.message);
+            }
+        });
+
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            console.log('🚪 Déconnexion de l\'utilisateur');
+            firebase.auth().signOut();
+        });
+
+        const dashboardBtn = document.getElementById('dashboard-btn');
+        if (dashboardBtn) {
+            dashboardBtn.addEventListener('click', () => {
+                if (!currentUser) {
+                    alert(t('mustBeLoggedIn') || 'Vous devez être connecté pour voir votre tableau de bord.');
+                    return;
+                }
+                console.log('📊 Ouverture du tableau de bord utilisateur');
+                showScreen('dashboard-screen');
+                loadUserDashboard(currentUser.uid);
+            });
+        }
+
+        // Basculer entre les formulaires d'inscription et de connexion
+        document.getElementById('show-register').addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('🔄 Affichage du formulaire d\'inscription');
+            showAuthForm('register');
+        });
+
+        document.getElementById('show-login').addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('🔄 Affichage du formulaire de connexion');
+            showAuthForm('login');
+        });
+        
+        console.log('🎉 Initialisation terminée avec succès');
+    }, 1000); // Attendre 1 seconde que Firebase se charge
 });
 
 // Afficher la liste des Sedarim
 function displaySedarim() {
+    console.log('📚 Début de l\'affichage des Sedarim');
     const list = document.getElementById('sedarim-list');
     if (!list) {
-        console.error('Élément sedarim-list non trouvé');
+        console.error('❌ Élément sedarim-list non trouvé');
         return;
     }
     
+    console.log('✅ Élément sedarim-list trouvé');
     list.innerHTML = '';
     
     if (sedarim.length === 0) {
-        list.innerHTML = '<p style="color: red; text-align: center;">Aucun ordre disponible</p>';
+        console.error('❌ Aucun Seder disponible');
+        list.innerHTML = `<p style="color: red; text-align: center;">${t('noSederAvailable')}</p>`;
         return;
     }
     
+    console.log('📋 Nombre de Sedarim à afficher:', sedarim.length);
+    
     sedarim.forEach((seder, index) => {
+        console.log(`📖 Création du bouton pour le Seder ${index + 1}: ${seder.french} (${seder.hebrew})`);
         const item = document.createElement('button');
         item.className = 'btn btn-seder';
         item.innerHTML = `
@@ -517,6 +813,7 @@ function displaySedarim() {
         `;
         
         item.addEventListener('click', () => {
+            console.log(`🖱️ Clic sur le Seder: ${seder.french}`);
             displayMassekhotForSeder(seder.id);
             showScreen('massekhet-screen');
         });
@@ -524,13 +821,18 @@ function displaySedarim() {
         list.appendChild(item);
     });
     
+    console.log('✅ Affichage des Sedarim terminé');
     showScreen('seder-screen');
 }
 
 // Afficher un écran spécifique
 function showScreen(screenId) {
+    console.log(`📺 Changement d'écran vers: ${screenId}`);
+    
     // Cacher tous les écrans
-    document.querySelectorAll('.screen').forEach(screen => {
+    const allScreens = document.querySelectorAll('.screen');
+    console.log(`🔍 Masquage de ${allScreens.length} écrans`);
+    allScreens.forEach(screen => {
         screen.classList.remove('active');
     });
     
@@ -538,45 +840,58 @@ function showScreen(screenId) {
     const targetScreen = document.getElementById(screenId);
     if (targetScreen) {
         targetScreen.classList.add('active');
+        console.log(`✅ Écran ${screenId} affiché avec succès`);
     } else {
-        console.error(`Écran non trouvé: ${screenId}`);
+        console.error(`❌ Écran non trouvé: ${screenId}`);
     }
     
     // Mettre à jour l'état de navigation
-    state.currentScreen = screenId.replace('-screen', '');
+    const screenName = screenId.replace('-screen', '');
+    console.log(`📍 État de navigation mis à jour: ${screenName}`);
     
     // Faire défiler vers le haut de la page
     window.scrollTo(0, 0);
+    console.log('⬆️ Défilement vers le haut de la page');
 }
 
 // Afficher les Massékhot d'un Seder spécifique
 function displayMassekhotForSeder(sederId) {
+    console.log(`📚 Affichage des Massékhot pour le Seder: ${sederId}`);
+    
     const seder = sedarim.find(s => s.id === sederId);
     if (!seder) {
-        console.error('Seder non trouvé:', sederId);
+        console.error('❌ Seder non trouvé:', sederId);
         return;
     }
 
+    console.log(`✅ Seder trouvé: ${seder.french} (${seder.hebrew})`);
+    console.log(`📋 Nombre de Massékhot dans ce Seder: ${seder.massekhot.length}`);
+
     const list = document.getElementById('massekhot-list');
     if (!list) {
-        console.error('Élément massekhot-list non trouvé');
+        console.error('❌ Élément massekhot-list non trouvé');
         return;
     }
 
     list.innerHTML = '';
 
     // Mettre à jour le titre avec le nom du Seder
-    document.querySelector('#massekhet-screen h3').textContent = 
-        `Traités de l'ordre ${seder.french} (${seder.hebrew})`;
+    const newTitle = currentLanguage === 'he' 
+        ? `${t('chooseMassekhet')} - ${seder.hebrew}`
+        : `${t('chooseMassekhet')} - ${seder.french} (${seder.hebrew})`;
+    document.querySelector('#massekhet-screen h3').textContent = newTitle;
+    console.log(`📝 Titre mis à jour: ${newTitle}`);
 
     if (seder.massekhot.length === 0) {
-        list.innerHTML = '<p style="text-align: center; color: #999;">Aucun traité disponible pour cet ordre</p>';
+        console.log('⚠️ Aucun Massékhot disponible pour ce Seder');
+        list.innerHTML = `<p style="text-align: center; color: #999;">${t('noMassekhetAvailable')}</p>`;
         return;
     }
 
-    seder.massekhot.forEach(massekhetKey => {
+    seder.massekhot.forEach((massekhetKey, index) => {
         const massekhet = talmudData[massekhetKey];
         if (massekhet) {
+            console.log(`📖 Création du bouton pour la Massekhet ${index + 1}: ${massekhetKey} (${massekhet.name})`);
             const item = document.createElement('button');
             item.className = 'btn btn-massekhet';
             item.innerHTML = `
@@ -585,15 +900,19 @@ function displayMassekhotForSeder(sederId) {
             `;
             
             item.addEventListener('click', () => {
+                console.log(`🖱️ Clic sur la Massekhet: ${massekhetKey}`);
                 currentMassekhet = massekhetKey;
                 displayPerakim();
                 showScreen('perek-screen');
             });
             
             list.appendChild(item);
+        } else {
+            console.warn(`⚠️ Massekhet non trouvée dans talmudData: ${massekhetKey}`);
         }
     });
 
+    console.log(`✅ Affichage des ${seder.massekhot.length} Massékhot terminé`);
     showScreen('massekhet-screen');
 }
 
@@ -612,7 +931,7 @@ function displayMassekhot() {
     console.log('Massekhot keys:', massekhotKeys);
     if (massekhotKeys.length === 0) {
         console.error('No massekhot found in talmudData');
-        list.innerHTML = '<p style="color: red; text-align: center;">Aucun traité disponible</p>';
+        list.innerHTML = `<p style="color: red; text-align: center;">${t('noMassekhetAvailable')}</p>`;
         return;
     }
     
@@ -659,7 +978,7 @@ function displayPerakim() {
     list.innerHTML = '';
     
     document.getElementById('perek-title').textContent = 
-        `Choisissez un chapitre (פרק) - ${massekhet.name}`;
+        `${t('choosePerek')} - ${massekhet.name}`;
     
     Object.keys(massekhet.perakim).forEach((perekKey, index) => {
         const perek = massekhet.perakim[perekKey];
@@ -697,7 +1016,7 @@ function displayDapim() {
     list.innerHTML = '';
     
     document.getElementById('daf-title').textContent = 
-        `Choisissez un daf (דף) - ${massekhet.name} ${currentPerek}`;
+        `${t('chooseDaf')} - ${massekhet.name} ${currentPerek}`;
     
     const dapimKeys = Object.keys(perek.dapim);
     
@@ -707,8 +1026,8 @@ function displayDapim() {
         message.className = 'no-dapim-message';
         message.style.cssText = 'text-align: center; padding: 40px; color: #666;';
         message.innerHTML = `
-            <p style="font-size: 1.2em; margin-bottom: 10px;">Aucun daf disponible pour ce chapitre</p>
-            <p style="font-size: 0.9em;">Vous pouvez ajouter des dapim et leurs questions dans le fichier script.js</p>
+            <p style="font-size: 1.2em; margin-bottom: 10px;">${t('noDafAvailable')}</p>
+            <p style="font-size: 0.9em;">${t('addDapimMessage')}</p>
         `;
         list.appendChild(message);
     } else {
@@ -719,9 +1038,10 @@ function displayDapim() {
             item.style.opacity = '0';
             item.style.transform = 'translateY(20px)';
             const questionCount = daf.questions ? daf.questions.length : 0;
+            const questionText = questionCount === 1 ? t('question') : t('questions');
             item.innerHTML = `
                 <div class="selection-item-hebrew">${dafKey}</div>
-                <div class="selection-item-name">${questionCount} question${questionCount > 1 ? 's' : ''}</div>
+                <div class="selection-item-name">${questionCount} ${questionText}</div>
             `;
             item.addEventListener('click', () => {
                 if (questionCount > 0) {
@@ -760,7 +1080,7 @@ function startQuiz() {
     const daf = perek.dapim[currentDaf];
     
     if (!daf || !daf.questions || daf.questions.length === 0) {
-        alert('Ce daf n\'a pas encore de questions. Ajoutez-en dans le fichier script.js');
+        alert(t('noQuestions'));
         showScreen('daf-screen');
         return;
     }
@@ -805,16 +1125,29 @@ function displayQuestion() {
 
     // Afficher le numéro de la question
     document.getElementById('question-number').textContent = 
-        `Question ${currentQuestionIndex + 1} / ${currentQuestions.length}`;
+        `${t('question')} ${currentQuestionIndex + 1} / ${currentQuestions.length}`;
 
     // Afficher le type de question
-    const typeText = question.type === 'multiple-choice' ? 'Choix multiple' : 'Réponse libre';
-    document.getElementById('question-type').textContent = `Type: ${typeText}`;
+    const typeText = question.type === 'multiple-choice' ? t('multipleChoice') : t('textAnswer');
+    document.getElementById('question-type').textContent = `${t('question')}: ${typeText}`;
 
-    // Afficher la question
-    const questionText = question.questionFr ? 
-        `${question.question}<br><small style="color: #888; direction: ltr; text-align: left;">${question.questionFr}</small>` : 
-        question.question;
+    // Afficher la question selon la langue
+    let mainText = question.question; // hébreu par défaut
+    if (typeof currentLanguage !== 'undefined') {
+        if (currentLanguage === 'fr' && question.questionFr) {
+            mainText = question.questionFr;
+        } else if (currentLanguage === 'en' && question.questionEn) {
+            mainText = question.questionEn;
+        }
+    }
+
+    // Afficher aussi la version hébraïque en petit si on n'est pas en hébreu
+    let questionText;
+    if (currentLanguage === 'he') {
+        questionText = question.question;
+    } else {
+        questionText = `${mainText}<br><small style="color: #888; direction: rtl; text-align: right;">${question.question}</small>`;
+    }
     document.getElementById('question-text').innerHTML = questionText;
 
     // Afficher les réponses
@@ -839,7 +1172,7 @@ function displayQuestion() {
         const inputDiv = document.createElement('div');
         inputDiv.className = 'answer-option';
         inputDiv.innerHTML = `
-            <input type="text" id="text-answer" placeholder="Tapez votre réponse...">
+            <input type="text" id="text-answer" placeholder="${t('typeAnswer')}">
         `;
         const textInput = inputDiv.querySelector('#text-answer');
         textInput.addEventListener('input', () => {
@@ -885,16 +1218,16 @@ function submitAnswer() {
     if (isCorrect) {
         feedbackDiv.classList.add('correct');
         feedbackDiv.classList.remove('incorrect');
-        feedbackDiv.textContent = '✓ Correct !';
+        feedbackDiv.textContent = t('correct');
         score++;
     } else {
         feedbackDiv.classList.add('incorrect');
         feedbackDiv.classList.remove('correct');
         if (question.type === 'multiple-choice') {
             const correctOption = question.options[question.correctAnswer];
-            feedbackDiv.textContent = `✗ Incorrect. La bonne réponse est: ${correctOption}`;
+            feedbackDiv.textContent = `${t('incorrect')}. ${t('correctAnswer')} ${correctOption}`;
         } else {
-            feedbackDiv.textContent = `✗ Incorrect. La bonne réponse est: ${question.correctAnswer}`;
+            feedbackDiv.textContent = `${t('incorrect')}. ${t('correctAnswer')} ${question.correctAnswer}`;
         }
     }
 
@@ -938,6 +1271,8 @@ function nextQuestion() {
 
 // Terminer le quiz
 function finishQuiz() {
+    // Enregistrer les résultats dans Firebase
+    saveQuizResults(score, currentQuestions.length, currentMassekhet, currentPerek, currentDaf);
     showResults();
 }
 
@@ -953,16 +1288,16 @@ function showResults() {
 
     const messageDiv = document.getElementById('score-message');
     if (percentage >= 90) {
-        messageDiv.textContent = 'Excellent ! Vous maîtrisez parfaitement ce daf ! 🎉';
+        messageDiv.textContent = t('excellent');
         messageDiv.style.color = '#28a745';
     } else if (percentage >= 70) {
-        messageDiv.textContent = 'Très bien ! Continuez vos révisions ! 👍';
+        messageDiv.textContent = t('veryGood');
         messageDiv.style.color = '#667eea';
     } else if (percentage >= 50) {
-        messageDiv.textContent = 'Pas mal ! Il faut encore réviser ce daf. 📚';
+        messageDiv.textContent = t('good');
         messageDiv.style.color = '#ffc107';
     } else {
-        messageDiv.textContent = 'Continuez à étudier ce daf, vous y arriverez ! 💪';
+        messageDiv.textContent = t('keepGoing');
         messageDiv.style.color = '#dc3545';
     }
 }
@@ -974,7 +1309,7 @@ function retryDaf() {
 
 // Mettre à jour le score
 function updateScore() {
-    document.getElementById('score').textContent = `Score: ${score}`;
+    document.getElementById('score').textContent = `${t('score')}: ${score}`;
 }
 
 // Mettre à jour la progression
@@ -1010,4 +1345,391 @@ function shuffleArray(array) {
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled;
+}
+// État de l'utilisateur
+let currentUser = null;
+
+// Gestion de l'état d'authentification
+firebase.auth().onAuthStateChanged((user) => {
+    console.log('🔄 Changement d\'état d\'authentification détecté');
+    if (user) {
+        // Utilisateur connecté
+        console.log('✅ Utilisateur connecté:', user.email, 'UID:', user.uid);
+        currentUser = user;
+        document.getElementById('auth-buttons').style.display = 'none';
+        document.getElementById('user-menu').style.display = 'block';
+        document.getElementById('user-email').textContent = user.email;
+        console.log('👤 Interface utilisateur mise à jour pour l\'utilisateur connecté');
+        loadUserData(user.uid);
+    } else {
+        // Utilisateur non connecté
+        console.log('❌ Utilisateur déconnecté');
+        currentUser = null;
+        document.getElementById('auth-buttons').style.display = 'block';
+        document.getElementById('user-menu').style.display = 'none';
+        console.log('👤 Interface utilisateur mise à jour pour l\'utilisateur déconnecté');
+    }
+});
+
+function showAuthForm(formType) {
+    console.log('🔄 Changement de formulaire d\'authentification vers:', formType);
+    if (formType === 'login') {
+        document.getElementById('login-form').style.display = 'block';
+        document.getElementById('register-form').style.display = 'none';
+        console.log('📋 Formulaire de connexion affiché');
+    } else {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'block';
+        console.log('📋 Formulaire d\'inscription affiché');
+    }
+}
+
+// Charger les données utilisateur
+async function loadUserData(userId) {
+    console.log('📂 Chargement des données utilisateur pour:', userId);
+    try {
+        const userDoc = await firebase.firestore().doc(`users/${userId}`).get();
+        if (userDoc.exists) {
+            const userData = userDoc.data();
+            console.log('✅ Données utilisateur chargées:', userData);
+            // Mettre à jour l'interface utilisateur avec les données de l'utilisateur
+        } else {
+            console.log('⚠️ Aucune donnée utilisateur trouvée dans Firestore');
+        }
+    } catch (error) {
+        console.error('❌ Erreur lors du chargement des données utilisateur:', error);
+    }
+}
+
+/**
+ * Charger et calculer les données de tableau de bord pour un utilisateur donné.
+ * Utilise uniquement les données propres à l'utilisateur (users/{uid}/dafStats et quizResults)
+ * et les combine avec la structure statique du Talmud (talmudData).
+ */
+async function loadUserDashboard(userId) {
+    console.log('📊 Chargement du tableau de bord pour:', userId);
+    try {
+        // Récupérer tous les dapim étudiés de l'utilisateur
+        const dafStatsSnap = await firebase
+            .firestore()
+            .collection('users')
+            .doc(userId)
+            .collection('dafStats')
+            .get();
+
+        const studiedDapim = [];
+        const studiedByMassekhet = {};
+        const studiedByPerek = {};
+
+        dafStatsSnap.forEach(doc => {
+            const data = doc.data();
+            if (!data.studied) return;
+
+            studiedDapim.push({ id: doc.id, ...data });
+
+            // Comptage par massekhet
+            studiedByMassekhet[data.massekhet] = (studiedByMassekhet[data.massekhet] || 0) + 1;
+
+            // Comptage par perek
+            const perekKey = `${data.massekhet}__${data.perek}`;
+            studiedByPerek[perekKey] = (studiedByPerek[perekKey] || 0) + 1;
+        });
+
+        const totalDafim = talmudDafCounts.total || 0;
+        const studiedTotal = studiedDapim.length;
+        const globalProgress = totalDafim > 0
+            ? Math.round((studiedTotal / totalDafim) * 100)
+            : 0;
+
+        // Progression par massekhet
+        const massekhetProgress = Object.keys(talmudDafCounts.byMassekhet).map(mKey => {
+            const total = talmudDafCounts.byMassekhet[mKey] || 0;
+            const done = studiedByMassekhet[mKey] || 0;
+            const percent = total > 0 ? Math.round((done / total) * 100) : 0;
+            return {
+                massekhetKey: mKey,
+                name: talmudData[mKey]?.name || mKey,
+                done,
+                total,
+                percent
+            };
+        }).filter(item => item.total > 0);
+
+        // Progression par perek (seulement pour ceux où l'utilisateur a étudié au moins 1 daf)
+        const perekProgress = Object.keys(studiedByPerek).map(pk => {
+            const [mKey, pKey] = pk.split('__');
+            const total = talmudPerekDafCounts[pk] || 0;
+            const done = studiedByPerek[pk] || 0;
+            const percent = total > 0 ? Math.round((done / total) * 100) : 0;
+            return {
+                massekhetKey: mKey,
+                massekhetName: talmudData[mKey]?.name || mKey,
+                perekKey: pKey,
+                done,
+                total,
+                percent
+            };
+        }).filter(item => item.total > 0);
+
+        // Trier les dapim étudiés par dernière tentative
+        studiedDapim.sort((a, b) => {
+            const da = a.lastAttemptAt && a.lastAttemptAt.toMillis ? a.lastAttemptAt.toMillis() : 0;
+            const db = b.lastAttemptAt && b.lastAttemptAt.toMillis ? b.lastAttemptAt.toMillis() : 0;
+            return db - da;
+        });
+        const lastStudied = studiedDapim.slice(0, 10);
+
+        // Dernières tentatives (toutes massekhot confondues)
+        const lastResultsSnap = await firebase
+            .firestore()
+            .collection('quizResults')
+            .where('userId', '==', userId)
+            .orderBy('date', 'desc')
+            .limit(5)
+            .get();
+
+        const lastResults = [];
+        lastResultsSnap.forEach(doc => {
+            lastResults.push(doc.data());
+        });
+
+        const dashboardData = {
+            globalProgress,
+            studiedTotal,
+            totalDafim,
+            massekhetProgress,
+            perekProgress,
+            lastStudied,
+            lastResults
+        };
+
+        renderUserDashboard(dashboardData);
+    } catch (error) {
+        console.error('❌ Erreur lors du chargement du tableau de bord:', error);
+    }
+}
+
+/**
+ * Rendu du tableau de bord à partir des données calculées.
+ * Cette fonction ne fait que du DOM, aucune logique métier.
+ */
+function renderUserDashboard(data) {
+    console.log('📊 Rendu du tableau de bord avec les données:', data);
+
+    // Progression globale
+    const percentText = document.getElementById('dashboard-global-percent');
+    const globalText = document.getElementById('dashboard-global-text');
+    const globalBar = document.getElementById('dashboard-global-progress-bar');
+
+    if (percentText) {
+        percentText.textContent = `${data.globalProgress || 0}%`;
+    }
+    if (globalText) {
+        globalText.textContent = `${data.studiedTotal || 0} / ${data.totalDafim || 0} dapim étudiés`;
+    }
+    if (globalBar) {
+        globalBar.style.width = `${data.globalProgress || 0}%`;
+    }
+
+    // Progression par massekhet
+    const massekhetList = document.getElementById('dashboard-massekhet-list');
+    if (massekhetList) {
+        massekhetList.innerHTML = '';
+        if (!data.massekhetProgress || data.massekhetProgress.length === 0) {
+            massekhetList.innerHTML = `<p style="color:#666;">${t('noProgressYet') || 'Aucune progression pour le moment.'}</p>`;
+        } else {
+            data.massekhetProgress
+                .sort((a, b) => b.percent - a.percent)
+                .forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'dashboard-item';
+                    div.innerHTML = `
+                        <div class="dashboard-item-title">
+                            <span class="hebrew">${item.massekhetKey}</span>
+                            <span class="french">${item.name}</span>
+                        </div>
+                        <div class="dashboard-item-info">
+                            <span>${item.done} / ${item.total} dapim</span>
+                            <span>${item.percent}%</span>
+                        </div>
+                        <div class="progress-bar small">
+                            <div class="progress-fill" style="width:${item.percent}%;"></div>
+                        </div>
+                    `;
+                    massekhetList.appendChild(div);
+                });
+        }
+    }
+
+    // Dapim étudiés (détail par daf)
+    const dapimList = document.getElementById('dashboard-dapim-list');
+    if (dapimList) {
+        dapimList.innerHTML = '';
+        if (!data.lastStudied || data.lastStudied.length === 0) {
+            dapimList.innerHTML = `<p style="color:#666;">${t('noDafStudiedYet') || 'Aucun daf étudié pour le moment.'}</p>`;
+        } else {
+            data.lastStudied.forEach(d => {
+                const mName = talmudData[d.massekhet]?.name || d.massekhet;
+                const dateText = d.lastAttemptAt && d.lastAttemptAt.toDate
+                    ? d.lastAttemptAt.toDate().toLocaleDateString()
+                    : '';
+                const div = document.createElement('div');
+                div.className = 'dashboard-item';
+                div.innerHTML = `
+                    <div class="dashboard-item-title">
+                        <span class="hebrew">${d.massekhet} ${d.perek} ${d.daf}</span>
+                        <span class="french">${mName}</span>
+                    </div>
+                    <div class="dashboard-item-info">
+                        <span>${t('lastScore') || 'Dernière note'}: ${d.lastScore}</span>
+                        <span>${t('bestScore') || 'Meilleure note'}: ${d.bestScore}</span>
+                        <span>${t('attempts') || 'Tentatives'}: ${d.attemptsCount || 1}</span>
+                        ${dateText ? `<span>${dateText}</span>` : ''}
+                    </div>
+                `;
+                dapimList.appendChild(div);
+            });
+        }
+    }
+
+    // Dernières notes (par tentative)
+    const lastResultsList = document.getElementById('dashboard-last-results');
+    if (lastResultsList) {
+        lastResultsList.innerHTML = '';
+        if (!data.lastResults || data.lastResults.length === 0) {
+            lastResultsList.innerHTML = `<p style="color:#666;">${t('noQuizYet') || 'Aucun quiz effectué pour le moment.'}</p>`;
+        } else {
+            data.lastResults.forEach(r => {
+                const mName = talmudData[r.massekhet]?.name || r.massekhet;
+                const percentage = r.totalQuestions > 0
+                    ? Math.round((r.score / r.totalQuestions) * 100)
+                    : 0;
+                const dateText = r.date && r.date.toDate
+                    ? r.date.toDate().toLocaleDateString()
+                    : '';
+                const div = document.createElement('div');
+                div.className = 'dashboard-item';
+                div.innerHTML = `
+                    <div class="dashboard-item-title">
+                        <span class="hebrew">${r.massekhet} ${r.perek} ${r.daf}</span>
+                        <span class="french">${mName}</span>
+                    </div>
+                    <div class="dashboard-item-info">
+                        <span>${r.score} / ${r.totalQuestions} (${percentage}%)</span>
+                        ${dateText ? `<span>${dateText}</span>` : ''}
+                    </div>
+                `;
+                lastResultsList.appendChild(div);
+            });
+        }
+    }
+}
+
+// Fonction pour enregistrer les résultats du quiz
+async function saveQuizResults(score, totalQuestions, massekhet, perek, daf) {
+    if (!currentUser) {
+        console.log('⚠️ Aucun utilisateur connecté, impossible de sauvegarder les résultats');
+        return;
+    }
+
+    console.log('💾 Sauvegarde des résultats du quiz:');
+    console.log('  - Score:', score, '/', totalQuestions);
+    console.log('  - Massekhet:', massekhet);
+    console.log('  - Perek:', perek);
+    console.log('  - Daf:', daf);
+
+    const quizResult = {
+        userId: currentUser.uid,
+        score,
+        totalQuestions,
+        massekhet,
+        perek,
+        daf,
+        date: firebase.firestore.FieldValue.serverTimestamp()
+    };
+
+    try {
+        // Ajouter le résultat à la collection 'quizResults'
+        console.log('📝 Ajout du résultat dans la collection quizResults...');
+        await firebase.firestore().collection('quizResults').add(quizResult);
+
+        // Mettre à jour les statistiques globales de l'utilisateur
+        console.log('📊 Mise à jour des statistiques utilisateur...');
+        await firebase.firestore().doc(`users/${currentUser.uid}`).update({
+            'stats.totalQuizzes': firebase.firestore.FieldValue.increment(1),
+            'stats.correctAnswers': firebase.firestore.FieldValue.increment(score),
+            'stats.totalAnswers': firebase.firestore.FieldValue.increment(totalQuestions)
+        });
+
+        /**
+         * Mise à jour des statistiques par daf pour cet utilisateur
+         *
+         * Modèle de données choisi (FireStore) :
+         * - Document utilisateur : users/{uid}
+         * - Sous-collection par utilisateur : users/{uid}/dafStats
+         *   - Document par combinaison massekhet/perek/daf :
+         *     id = `${massekhet}__${perek}__${daf}` (clé déterministe et lisible)
+         *     Champs principaux :
+         *       - massekhet, perek, daf : permettent de relier à la structure du Talmud
+         *       - studied (bool) : vrai si au moins une tentative
+         *       - studiedAt (timestamp) : première fois où le daf a été étudié
+         *       - lastAttemptAt (timestamp) : dernière tentative
+         *       - attemptsCount (number) : nombre total de tentatives
+         *       - lastScore (number) : score de la dernière tentative (0–totalQuestions)
+         *       - bestScore (number) : meilleur score obtenu
+         *
+         * Pourquoi persister ces données ?
+         * - Elles sont propres à chaque utilisateur et nécessaires pour :
+         *   - marquer un daf comme étudié
+         *   - calculer les pourcentages de progression (par massekhet, perek, global)
+         *   - afficher les dernières notes par daf sans recalculer tout l'historique
+         * - Elles peuvent être recalculées partiellement à partir de `quizResults`,
+         *   mais les agrégats (bestScore, attemptsCount, dates) rendent l'affichage
+         *   du tableau de bord beaucoup plus performant et scalable.
+         */
+        const dafStatsRef = firebase
+            .firestore()
+            .collection('users')
+            .doc(currentUser.uid)
+            .collection('dafStats')
+            .doc(`${massekhet}__${perek}__${daf}`);
+
+        await firebase.firestore().runTransaction(async (tx) => {
+            const doc = await tx.get(dafStatsRef);
+            const now = firebase.firestore.FieldValue.serverTimestamp();
+
+            if (!doc.exists) {
+                // Première fois que ce daf est étudié par cet utilisateur
+                tx.set(dafStatsRef, {
+                    userId: currentUser.uid,
+                    massekhet,
+                    perek,
+                    daf,
+                    studied: true,
+                    studiedAt: now,
+                    lastAttemptAt: now,
+                    attemptsCount: 1,
+                    lastScore: score,
+                    bestScore: score
+                });
+            } else {
+                // Mise à jour d'un daf déjà étudié
+                const data = doc.data();
+                const newAttemptsCount = (data.attemptsCount || 0) + 1;
+                const newBestScore = Math.max(data.bestScore || 0, score);
+
+                tx.update(dafStatsRef, {
+                    studied: true,
+                    lastAttemptAt: now,
+                    attemptsCount: newAttemptsCount,
+                    lastScore: score,
+                    bestScore: newBestScore
+                });
+            }
+        });
+
+        console.log('✅ Résultats et statistiques par daf enregistrés avec succès dans Firestore');
+    } catch (error) {
+        console.error('❌ Erreur lors de l\'enregistrement des résultats:', error);
+    }
 }

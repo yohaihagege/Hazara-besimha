@@ -135,6 +135,12 @@ header {
     padding-bottom: 30px;
 }
 
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 header::after {
     content: '';
     position: absolute;
@@ -182,6 +188,67 @@ header h2 {
     font-weight: 400;
     font-style: italic;
     letter-spacing: 1px;
+}
+
+.header-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.language-selector label {
+    font-size: 0.9em;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+#language-select {
+    padding: 8px 15px;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    background: linear-gradient(145deg, #ffffff, #faf8f3);
+    color: var(--navy);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+#language-select:hover {
+    background: linear-gradient(145deg, #f5f1e8, #e8e0d1);
+    border-color: var(--gold-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(212, 175, 55, 0.2);
+}
+
+#language-select:focus {
+    border-color: var(--gold-dark);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+#language-select option {
+    background: #ffffff;
+    color: var(--navy);
+    padding: 5px;
+}
+
+/* Support RTL pour l'hébreu */
+[dir="rtl"] .header-controls {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .language-selector {
+    flex-direction: row-reverse;
 }
 
 .screen {
@@ -886,5 +953,161 @@ header h2 {
 
     .selection-list {
         grid-template-columns: 1fr;
+    }
+}
+/* Styles pour la fenêtre modale */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close-modal {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #000;
+}
+
+/* Animations pour la modale */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Styles pour les boutons d'authentification dans le header */
+#auth-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#auth-buttons .btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Styles pour l'authentification */
+#auth-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.auth-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-form {
+    width: 100%;
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 1rem;
+    color: #7f8c8d;
+}
+
+.auth-switch a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+/* Menu utilisateur */
+#user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#user-email {
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .auth-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    #user-menu {
+        position: static;
+        margin-top: 1rem;
+        justify-content: center;
     }
 }

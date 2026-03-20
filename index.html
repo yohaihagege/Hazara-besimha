@@ -5,18 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hazara Besimha - Quiz de Mémorisation</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="translations.js"></script>
+    
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-analytics-compat.js"></script>
+    
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBAOubZehTRQ25F-EosjadLi-wD55vvauA",
+        authDomain: "hazara-besimha.firebaseapp.com",
+        projectId: "hazara-besimha",
+        storageBucket: "hazara-besimha.firebasestorage.app",
+        messagingSenderId: "651302599716",
+        appId: "1:651302599716:web:e696350125ac377b616cb1",
+        measurementId: "G-06M6B21GCJ"
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+      const analytics = firebase.analytics();
+
+      // Rendre ces variables globales
+      window.auth = auth;
+      window.db = db;
+      window.firebaseApp = {
+        createUserWithEmailAndPassword: firebase.auth().createUserWithEmailAndPassword,
+        signInWithEmailAndPassword: firebase.auth().signInWithEmailAndPassword,
+        signOut: firebase.auth().signOut,
+        onAuthStateChanged: firebase.auth().onAuthStateChanged,
+        updateProfile: firebase.auth().updateProfile,
+        collection: firebase.firestore().collection,
+        doc: firebase.firestore().doc,
+        setDoc: firebase.firestore().doc().set,
+        getDoc: firebase.firestore().doc().get,
+        updateDoc: firebase.firestore().doc().update,
+        increment: firebase.firestore.FieldValue.increment,
+        serverTimestamp: firebase.firestore.FieldValue.serverTimestamp,
+        addDoc: firebase.firestore().collection().add
+      };
+      
+      console.log('✅ Firebase initialisé avec compat mode');
+    </script>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>    חזרה בשמחה </h1>
-            <h2>Hazara Besimha - Quiz de Mémorisation</h2>
+            <div class="header-content">
+                <h1>    חזרה בשמחה </h1>
+                <h2 data-i18n="title">Hazara Besimha - Quiz de Mémorisation</h2>
+            </div>
+            <div class="header-controls">
+                <div class="language-selector">
+                    <label for="language-select" data-i18n="language">Langue:</label>
+                    <select id="language-select" class="btn btn-small">
+                        <option value="fr" data-i18n="french">Français</option>
+                        <option value="en" data-i18n="english">English</option>
+                        <option value="he" data-i18n="hebrew">עברית</option>
+                    </select>
+                </div>
+                <div id="user-menu" style="display: none;">
+                    <span id="user-email"></span>
+                    <button id="dashboard-btn" class="btn btn-small" data-i18n="dashboard">Mon tableau de bord</button>
+                    <button id="logout-btn" class="btn btn-small" data-i18n="logout">Déconnexion</button>
+                </div>
+                <div id="auth-buttons" style="display: block;">
+                    <button id="login-modal-btn" class="btn btn-small" data-i18n="login">Connexion</button>
+                    <button id="register-modal-btn" class="btn btn-small" data-i18n="register">Inscription</button>
+                </div>
+            </div>
         </header>
+
+        <!-- Fenêtre modale d'authentification -->
+        <div id="auth-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="auth-form" id="login-form">
+                    <h2 data-i18n="loginTitle">Connexion</h2>
+                    <div class="form-group">
+                        <label for="login-email" data-i18n="email">Email</label>
+                        <input type="email" id="login-email" data-i18n-placeholder="emailPlaceholder" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password" data-i18n="password">Mot de passe</label>
+                        <input type="password" id="login-password" data-i18n-placeholder="passwordPlaceholder" placeholder="Votre mot de passe" required>
+                    </div>
+                    <button id="login-btn" class="btn btn-primary" data-i18n="loginButton">Se connecter</button>
+                    <p class="auth-switch"><span data-i18n="noAccount">Pas encore de compte ?</span> <a href="#" id="show-register" data-i18n="signUp">S'inscrire</a></p>
+                </div>
+
+                <div class="auth-form" id="register-form" style="display: none;">
+                    <h2 data-i18n="registerTitle">Inscription</h2>
+                    <div class="form-group">
+                        <label for="register-username" data-i18n="username">Nom d'utilisateur</label>
+                        <input type="text" id="register-username" data-i18n-placeholder="usernamePlaceholder" placeholder="Choisissez un pseudo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email" data-i18n="email">Email</label>
+                        <input type="email" id="register-email" data-i18n-placeholder="emailPlaceholder" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password" data-i18n="password">Mot de passe</label>
+                        <input type="password" id="register-password" data-i18n-placeholder="createPasswordPlaceholder" placeholder="Créez un mot de passe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password" data-i18n="confirmPassword">Confirmer le mot de passe</label>
+                        <input type="password" id="confirm-password" data-i18n-placeholder="confirmPasswordPlaceholder" placeholder="Confirmez votre mot de passe" required>
+                    </div>
+                    <button id="register-btn" class="btn btn-primary" data-i18n="registerButton">S'inscrire</button>
+                    <p class="auth-switch"><span data-i18n="haveAccount">Déjà inscrit ?</span> <a href="#" id="show-login" data-i18n="signIn">Se connecter</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Écran tableau de bord utilisateur -->
+        <div id="dashboard-screen" class="screen">
+            <div class="dashboard-content">
+                <h3 data-i18n="dashboardTitle">Tableau de bord</h3>
+                <p class="dashboard-subtitle" data-i18n="dashboardSubtitle">
+                    Suivez votre progression dans les dapim étudiés.
+                </p>
+
+                <div class="dashboard-section">
+                    <h4 data-i18n="globalProgress">Progression globale</h4>
+                    <div class="dashboard-global">
+                        <div class="dashboard-global-circle">
+                            <span id="dashboard-global-percent">0%</span>
+                        </div>
+                        <div class="dashboard-global-info">
+                            <p id="dashboard-global-text">0 / 0 dapim étudiés</p>
+                            <div class="progress-bar">
+                                <div id="dashboard-global-progress-bar" class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h4 data-i18n="progressByMassekhet">Progression par massekhet</h4>
+                    <div id="dashboard-massekhet-list" class="dashboard-list">
+                        <!-- Rempli dynamiquement -->
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h4 data-i18n="studiedDapim">Dapim étudiés</h4>
+                    <div id="dashboard-dapim-list" class="dashboard-list">
+                        <!-- Rempli dynamiquement -->
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h4 data-i18n="lastResults">Dernières notes obtenues</h4>
+                    <div id="dashboard-last-results" class="dashboard-list">
+                        <!-- Rempli dynamiquement -->
+                    </div>
+                </div>
+
+                <div class="dashboard-actions">
+                    <button id="dashboard-back-to-seder" class="btn btn-secondary" data-i18n="backToLearning">
+                        ← Retour à l'étude
+                    </button>
+                </div>
+            </div>
+        </div>
 
         <!-- Écran de sélection du Seder -->
         <div id="seder-screen" class="screen active">
             <div class="selection-content">
-                <h3>Choisissez un ordre (סדר)</h3>
+                <h3 data-i18n="chooseSeder">Choisissez un ordre (סדר)</h3>
                 <div id="sedarim-list" class="selection-list">
                     <!-- Les boutons seront générés dynamiquement par JavaScript -->
                 </div>
@@ -26,10 +188,10 @@
         <!-- Écran de sélection du traité -->
         <div id="massekhet-screen" class="screen">
             <div class="selection-content">
-                <h3>Choisissez un traité (מסכת)</h3>
-                <button id="back-to-seder" class="btn btn-secondary">← Retour aux ordres</button>
+                <h3 data-i18n="chooseMassekhet">Choisissez un traité (מסכת)</h3>
+                <button id="back-to-seder" class="btn btn-secondary" data-i18n="backToSeder">← Retour aux ordres</button>
                 <div id="massekhot-list" class="selection-list">
-                    <p style="text-align: center; color: #999;">Chargement des traités...</p>
+                    <p style="text-align: center; color: #999;" data-i18n="loading">Chargement des traités...</p>
                 </div>
             </div>
         </div>
@@ -37,8 +199,8 @@
         <!-- Écran de sélection du chapitre -->
         <div id="perek-screen" class="screen">
             <div class="selection-content">
-                <h3 id="perek-title">Choisissez un chapitre (פרק)</h3>
-                <button id="back-to-massekhet" class="btn btn-secondary">← Retour aux traités</button>
+                <h3 id="perek-title" data-i18n="choosePerek">Choisissez un chapitre (פרק)</h3>
+                <button id="back-to-massekhet" class="btn btn-secondary" data-i18n="backToMassekhet">← Retour aux traités</button>
                 <div id="perakim-list" class="selection-list"></div>
             </div>
         </div>
@@ -46,8 +208,8 @@
         <!-- Écran de sélection du daf -->
         <div id="daf-screen" class="screen">
             <div class="selection-content">
-                <h3 id="daf-title">Choisissez un daf (דף)</h3>
-                <button id="back-to-perek" class="btn btn-secondary">← Retour aux chapitres</button>
+                <h3 id="daf-title" data-i18n="chooseDaf">Choisissez un daf (דף)</h3>
+                <button id="back-to-perek" class="btn btn-secondary" data-i18n="backToPerek">← Retour aux chapitres</button>
                 <div id="dapim-list" class="selection-list"></div>
             </div>
         </div>
@@ -61,7 +223,7 @@
                     <span id="current-perek-name"></span> > 
                     <span id="current-daf-name"></span>
                 </div>
-                <button id="back-to-daf" class="btn btn-small">← Retour</button>
+                <button id="back-to-daf" class="btn btn-small" data-i18n="backToDaf">← Retour</button>
                 <div class="progress-bar">
                     <div id="progress" class="progress-fill"></div>
                 </div>
@@ -81,16 +243,16 @@
             <div id="feedback" class="feedback"></div>
 
             <div class="quiz-actions">
-                <button id="submit-btn" class="btn btn-primary" disabled>Valider</button>
-                <button id="next-btn" class="btn btn-secondary" style="display: none;">Question Suivante</button>
-                <button id="finish-btn" class="btn btn-secondary" style="display: none;">Terminer le Quiz</button>
+                <button id="submit-btn" class="btn btn-primary" disabled data-i18n="submit">Valider</button>
+                <button id="next-btn" class="btn btn-secondary" style="display: none;" data-i18n="nextQuestion">Question Suivante</button>
+                <button id="finish-btn" class="btn btn-secondary" style="display: none;" data-i18n="finishQuiz">Terminer le Quiz</button>
             </div>
         </div>
 
         <!-- Écran de résultats -->
         <div id="results-screen" class="screen">
             <div class="results-content">
-                <h2>Résultats du Quiz</h2>
+                <h2 data-i18n="resultsTitle">Résultats du Quiz</h2>
                 <div class="score-display">
                     <div class="score-circle">
                         <span id="final-score">0</span>
@@ -99,13 +261,13 @@
                     <p id="score-message"></p>
                 </div>
                 <div class="results-details">
-                    <p>Bonnes réponses: <span id="correct-count">0</span></p>
-                    <p>Mauvaises réponses: <span id="incorrect-count">0</span></p>
-                    <p>Total: <span id="total-questions">0</span> questions</p>
+                    <p><span data-i18n="correctAnswers">Bonnes réponses:</span> <span id="correct-count">0</span></p>
+                    <p><span data-i18n="incorrectAnswers">Mauvaises réponses:</span> <span id="incorrect-count">0</span></p>
+                    <p><span data-i18n="totalQuestions">Total:</span> <span id="total-questions">0</span> <span data-i18n="questions">questions</span></p>
                 </div>
                 <div class="results-actions">
-                    <button id="retry-daf-btn" class="btn btn-primary">Réviser ce daf à nouveau</button>
-                    <button id="new-selection-btn" class="btn btn-secondary">Choisir un autre daf</button>
+                    <button id="retry-daf-btn" class="btn btn-primary" data-i18n="retryDaf">Réviser ce daf à nouveau</button>
+                    <button id="new-selection-btn" class="btn btn-secondary" data-i18n="newSelection">Choisir un autre daf</button>
                 </div>
             </div>
         </div>
