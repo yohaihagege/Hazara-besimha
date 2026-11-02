@@ -18,34 +18,42 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('pseudo', TextType::class, [
+                'label' => 'Pseudo',
+                'attr' => ['class' => 'form-control'],
                 'constraints' => [
-                    new NotBlank([
-                        'message' => 'Please enter a pseudo',
-                    ]),
+                    new NotBlank(
+                        message: 'Veuillez entrer un pseudo',
+                    ),
                 ],
             ])
             ->add('email', EmailType::class, [
+                'label' => 'Email',
+                'attr' => ['class' => 'form-control'],
                 'constraints' => [
-                    new NotBlank([
-                        'message' => 'Please enter an email',
-                    ]),
+                    new NotBlank(
+                        message: 'Veuillez entrer un email',
+                    ),
                 ],
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password'],
+                'label' => 'Mot de passe',
+                'attr' => [
+                    'autocomplete' => 'new-password',
+                    'class' => 'form-control',
+                ],
                 'constraints' => [
-                    new NotBlank([
-                        'message' => 'Please enter a password',
-                    ]),
-                    new Length([
-                        'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                    new NotBlank(
+                        message: 'Veuillez entrer un mot de passe',
+                    ),
+                    new Length(
+                        min: 6,
+                        minMessage: 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
-                        'max' => 4096,
-                    ]),
+                        max: 4096,
+                    ),
                 ],
             ])
         ;

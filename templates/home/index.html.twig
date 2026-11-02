@@ -14,7 +14,6 @@
                     <label for="language-select" data-i18n="language">Langue:</label>
                     <select id="language-select" class="btn btn-small">
                         <option value="fr" data-i18n="french">Français</option>
-                        <option value="en" data-i18n="english">English</option>
                         <option value="he" data-i18n="hebrew">עברית</option>
                     </select>
                 </div>
@@ -36,7 +35,36 @@
             <div class="selection-content">
                 <h3 data-i18n="chooseSeder">Choisissez un ordre (סדר)</h3>
                 <div id="sedarim-list" class="selection-list">
-                    <!-- Les boutons seront générés dynamiquement par JavaScript -->
+                    <button type="button" class="btn btn-seder" onclick="window.selectSederById && window.selectSederById('zeraim')">
+                        <span class="hebrew">זרעים</span>
+                        <span class="french">Semences</span>
+                        <span class="description">Lois agricoles et bénédictions</span>
+                    </button>
+                    <button type="button" class="btn btn-seder" onclick="window.selectSederById && window.selectSederById('moed')">
+                        <span class="hebrew">מועד</span>
+                        <span class="french">Temps fixé</span>
+                        <span class="description">Chabbat et fêtes</span>
+                    </button>
+                    <button type="button" class="btn btn-seder" onclick="window.selectSederById && window.selectSederById('nashim')">
+                        <span class="hebrew">נשים</span>
+                        <span class="french">Femmes</span>
+                        <span class="description">Lois familiales et mariage</span>
+                    </button>
+                    <button type="button" class="btn btn-seder" onclick="window.selectSederById && window.selectSederById('nezikin')">
+                        <span class="hebrew">נזיקין</span>
+                        <span class="french">Dommages</span>
+                        <span class="description">Droit civil et pénal</span>
+                    </button>
+                    <button type="button" class="btn btn-seder" onclick="window.selectSederById && window.selectSederById('kodashim')">
+                        <span class="hebrew">קדשים</span>
+                        <span class="french">Choses saintes</span>
+                        <span class="description">Lois du Temple et sacrifices</span>
+                    </button>
+                    <button type="button" class="btn btn-seder" onclick="window.selectSederById && window.selectSederById('tohorot')">
+                        <span class="hebrew">טהרות</span>
+                        <span class="french">Puretés</span>
+                        <span class="description">Lois de pureté rituelle</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -79,7 +107,13 @@
                     <span id="current-perek-name"></span> > 
                     <span id="current-daf-name"></span>
                 </div>
-                <button id="back-to-daf" class="btn btn-small" data-i18n="backToDaf">← Retour</button>
+                <div class="quiz-top-actions" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 15px;">
+                    <button id="back-to-daf" class="btn btn-small" style="margin: 0;" data-i18n="backToDaf">← Retour</button>
+                    <div class="daf-yomi-controls" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                        <a id="daf-yomi-link" href="https://daf-yomi.com/dafYomi.aspx" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small" style="margin: 0; text-decoration: none;" data-i18n="viewOnDafYomi">📖 Étudier ce Daf sur daf-yomi.com</a>
+                        <button id="regenerate-questions-btn" type="button" class="btn btn-secondary btn-small" style="margin: 0;" data-i18n="regenerateQuestions">🔄 Nouvelles questions (daf-yomi.com)</button>
+                    </div>
+                </div>
                 <div class="progress-bar">
                     <div id="progress" class="progress-fill"></div>
                 </div>
@@ -89,19 +123,26 @@
                 </div>
             </div>
 
-            <div class="question-container">
-                <div id="question-text" class="question-text"></div>
-                <div id="question-type" class="question-type"></div>
+            <div id="quiz-loading" class="quiz-loading" style="display: none; text-align: center; padding: 40px 20px;">
+                <div class="spinner-border" style="color: var(--gold); width: 3rem; height: 3rem; margin-bottom: 15px;" role="status"></div>
+                <p id="quiz-loading-text" style="font-size: 1.3em; color: var(--navy); font-weight: 600;" data-i18n="loadingDafQuestions">Récupération du Daf sur daf-yomi.com et génération des questions...</p>
             </div>
 
-            <div id="answers-container" class="answers-container"></div>
+            <div id="quiz-body-content">
+                <div class="question-container">
+                    <div id="question-text" class="question-text"></div>
+                    <div id="question-type" class="question-type"></div>
+                </div>
 
-            <div id="feedback" class="feedback"></div>
+                <div id="answers-container" class="answers-container"></div>
 
-            <div class="quiz-actions">
-                <button id="submit-btn" class="btn btn-primary" disabled data-i18n="submit">Valider</button>
-                <button id="next-btn" class="btn btn-secondary" style="display: none;" data-i18n="nextQuestion">Question Suivante</button>
-                <button id="finish-btn" class="btn btn-secondary" style="display: none;" data-i18n="finishQuiz">Terminer le Quiz</button>
+                <div id="feedback" class="feedback"></div>
+
+                <div class="quiz-actions">
+                    <button id="submit-btn" class="btn btn-primary" disabled data-i18n="submit">Valider</button>
+                    <button id="next-btn" class="btn btn-secondary" style="display: none;" data-i18n="nextQuestion">Question Suivante</button>
+                    <button id="finish-btn" class="btn btn-secondary" style="display: none;" data-i18n="finishQuiz">Terminer le Quiz</button>
+                </div>
             </div>
         </div>
 

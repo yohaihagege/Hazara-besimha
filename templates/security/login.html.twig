@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion - Hazara Besimha{% endblock %}
+
+{% block body %}
+<div class="container" style="max-width: 520px;">
+    <header>
+        <div class="header-content">
+            <h1>חזרה בשמחה</h1>
+            <h2>Connexion</h2>
+        </div>
+    </header>
+
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        <div class="mb-3">
+            <label for="username" class="form-label">Email</label>
+            <input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="email" required autofocus>
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Mot de passe</label>
+            <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
+        </div>
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 25px;">
+            <a href="{{ path('app_home') }}" class="btn btn-secondary btn-small" style="margin: 0; text-decoration: none;">← Retour</a>
+            <button class="btn btn-primary btn-small" type="submit" style="margin: 0;">Se connecter</button>
+        </div>
+
+        <p style="text-align: center; margin-top: 20px;">
+            Pas encore de compte ? <a href="{{ path('app_register') }}">S'inscrire</a>
+        </p>
+    </form>
+</div>
+{% endblock %}

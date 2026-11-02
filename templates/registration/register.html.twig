@@ -1,19 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Inscription - Hazara Besimha{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+<div class="container" style="max-width: 520px;">
+    <header>
+        <div class="header-content">
+            <h1>חזרה בשמחה</h1>
+            <h2>Inscription</h2>
+        </div>
+    </header>
 
     {{ form_errors(registrationForm) }}
 
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.pseudo) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
+        <div class="mb-3">
+            {{ form_row(registrationForm.pseudo) }}
+        </div>
+        <div class="mb-3">
+            {{ form_row(registrationForm.email) }}
+        </div>
+        <div class="mb-3">
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Mot de passe'
+            }) }}
+        </div>
 
-        <button type="submit" class="btn">Register</button>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 25px;">
+            <a href="{{ path('app_home') }}" class="btn btn-secondary btn-small" style="margin: 0; text-decoration: none;">← Retour</a>
+            <button type="submit" class="btn btn-primary btn-small" style="margin: 0;">S'inscrire</button>
+        </div>
+
+        <p style="text-align: center; margin-top: 20px;">
+            Déjà inscrit ? <a href="{{ path('app_login') }}">Se connecter</a>
+        </p>
     {{ form_end(registrationForm) }}
+</div>
 {% endblock %}
