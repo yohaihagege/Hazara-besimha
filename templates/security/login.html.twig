@@ -23,7 +23,16 @@
 
         <div class="mb-3">
             <label for="password" class="form-label">Mot de passe</label>
-            <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
+            <div style="position: relative; display: flex; align-items: center;">
+                <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required style="padding-right: 45px;">
+                <button
+                    type="button"
+                    onclick="const input = document.getElementById('password'); const isPwd = input.type === 'password'; input.type = isPwd ? 'text' : 'password'; this.setAttribute('aria-label', isPwd ? 'Masquer le mot de passe' : 'Afficher le mot de passe'); this.innerHTML = isPwd ? '🙈' : '👁️';"
+                    aria-label="Afficher le mot de passe"
+                    title="Afficher / masquer le mot de passe"
+                    style="position: absolute; right: 10px; background: none; border: none; cursor: pointer; font-size: 1.2rem; line-height: 1; padding: 4px; color: #555;"
+                >👁️</button>
+            </div>
         </div>
 
         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">

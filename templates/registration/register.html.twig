@@ -21,9 +21,23 @@
             {{ form_row(registrationForm.email) }}
         </div>
         <div class="mb-3">
-            {{ form_row(registrationForm.plainPassword, {
-                label: 'Mot de passe'
-            }) }}
+            {{ form_label(registrationForm.plainPassword, 'Mot de passe') }}
+            <div style="position: relative; display: flex; align-items: center;">
+                {{ form_widget(registrationForm.plainPassword, {
+                    attr: {
+                        class: 'form-control',
+                        style: 'padding-right: 45px;'
+                    }
+                }) }}
+                <button
+                    type="button"
+                    onclick="const input = this.parentElement.querySelector('input'); const isPwd = input.type === 'password'; input.type = isPwd ? 'text' : 'password'; this.setAttribute('aria-label', isPwd ? 'Masquer le mot de passe' : 'Afficher le mot de passe'); this.innerHTML = isPwd ? '🙈' : '👁️';"
+                    aria-label="Afficher le mot de passe"
+                    title="Afficher / masquer le mot de passe"
+                    style="position: absolute; right: 10px; background: none; border: none; cursor: pointer; font-size: 1.2rem; line-height: 1; padding: 4px; color: #555;"
+                >👁️</button>
+            </div>
+            {{ form_errors(registrationForm.plainPassword) }}
         </div>
 
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 25px;">
